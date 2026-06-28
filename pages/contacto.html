@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div style="font-size:1.5rem;animation:waveFloat 4s ease-in-out infinite">🌊</div>
+    <span class="nav-logo-text">Luxwave <span>Express</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">INICIO</a></li>
+    <li><a href="productos.html">PRODUCTO</a></li>
+    <li><a href="contacto.html" class="active">CONTACTO</a></li>
+    <li><a href="admin.html">ADMIN</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="productos.html" class="btn btn-primary btn-sm">Ver Catálogo →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="section-tag" style="margin:0 auto 16px">Estamos Aquí</div>
+  <h1 class="section-title" style="text-align:center">Contáctanos <span class="highlight">Directamente</span></h1>
+  <p class="section-subtitle" style="text-align:center;margin:0 auto 0">Respuesta rápida por WhatsApp o correo. Tienda virtual Panamá, Panamá Oeste.</p>
+</div>
+
+<!-- ABOUT / BIO SECTION -->
+<section class="section" style="padding-top:60px">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-avatar">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">🌊</div>
+        </div>
+        <div class="about-tags">
+          <span class="about-tag">Experto en tecnología</span>
+          <span class="about-tag">100% Panameño</span>
+          <span class="about-tag">Conocimiento del mercado</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">Sobre Nosotros</div>
+        <h2 class="section-title" style="margin-top:12px">La historia detrás de <span class="highlight">Luxwave Express</span></h2>
+        <p class="about-text">
+         En LuxWave Express somos un equipo de Panamá Oeste apasionado por la tecnología y dedicado a ofrecer soluciones 
+         electrónicas accesibles para todos. Nacimos con la idea de facilitar el acceso a productos tecnológicos de calidad, 
+         sin complicaciones y sin precios imposibles.
+        </p>
+        <p class="about-text">
+         Nos especializamos en la venta de equipos electrónicos a través de nuestra tienda virtual, enfocándonos 
+         en brindar comodidad, confianza y una experiencia de compra sencilla desde cualquier lugar.
+        </p>
+         <p class="about-text">
+         Entendemos que cada persona tiene un presupuesto diferente, por eso trabajamos para ofrecer opciones que se ajusten 
+         a tus posibilidades, sin sacrificar calidad. Nuestro objetivo es que puedas adquirir la tecnología que necesitas de forma 
+         cómoda, con métodos de pago accesibles y un proceso claro desde el inicio.
+        </p>
+         <p class="about-text">
+         Además, todos nuestros productos cuentan con garantía, porque creemos en la transparencia y en la tranquilidad de nuestros clientes.
+         Queremos que compres sin presión, con la seguridad de que siempre tendrás respaldo y atención cuando lo necesites.
+        </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT INFO CARDS -->
+<section class="section" style="padding:0 0 60px">
+  <div class="container">
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <h3>Teléfono</h3>
+        <p class="contact-val">+507 6977-5333</p>
+        <a href="tel:+50769775333" class="btn btn-ghost btn-sm" style="margin-top:12px">Llamar ahora</a>
+      </div>
+      <div class="contact-card highlight-card">
+        <div class="contact-card-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p class="contact-val">Respuesta inmediata</p>
+        <button class="btn btn-sand btn-sm" style="margin-top:12px"
+          onclick="openWhatsApp('50769775333', '¡Hola! Me comunico desde la página web de Luxwave Express. ¿Me pueden ayudar?')">
+          Abrir Chat →
+        </button>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📧</div>
+        <h3>Correo</h3>
+        <p class="contact-val">luxwaveexpress@gmail.com</p>
+        <a href="mailto:luxwaveexpress@gmail.com" class="btn btn-ghost btn-sm" style="margin-top:12px">Enviar email</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📍</div>
+        <h3>Dirección</h3>
+        <p class="contact-val" style="font-size:0.875rem;line-height:1.5"> Tienda virtual<br>Panamá, Panamá Oeste</p>
+        <span style="display:block;margin-top:12px;font-size:0.75rem;color:var(--gray)">Todos los dias disponibles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section" id="cotizar">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="quote-info">
+        <div class="section-tag">Cotización</div>
+        <h2 class="section-title" style="margin-top:12px">Solicita tu <span class="highlight">Cotización</span></h2>
+        <p class="section-subtitle">Completa el formulario y te respondemos en menos de 2 horas con el mejor precio disponible. LLene todos los campos.</p>
+
+        <div class="quote-benefits">
+          <div class="benefit">✅ Sin compromiso de compra</div>
+          <div class="benefit">⚡ Respuesta en 1–2 horas</div>
+          <div class="benefit">💰 Los mejores precios a tu comodidad</div>
+          <div class="benefit">🛡️ Garantía en todos los equipos</div>
+        </div>
+
+        <div class="whatsapp-alt">
+          <p>¿Prefieres WhatsApp?</p>
+          <button class="btn btn-sand" onclick="openWhatsApp('50769775333', '¡Hola! Me gustaría cotizar un equipo electrónico. ¿Me pueden ayudar?')">
+            Cotizar por WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="quote-form-card">
+        <form id="quoteForm" onsubmit="submitQuote(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre completo</label>
+              <input type="text" class="form-control" id="q_name" placeholder="Nombre y apellido" required>
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp</label>
+              <input type="tel" class="form-control" id="q_phone" placeholder="+507 6000-0000" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" class="form-control" id="q_email" placeholder="correo@ejemplo.com">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Categoría del equipo</label>
+              <select class="form-control" id="q_category" required>
+                <option value="">Selecciona...</option>
+                <option value="celular">Celular</option>
+                <option value="laptop">Laptop</option>
+                <option value="tablet">Tablet</option>
+                <option value="monitor">Monitor</option>
+                <option value="accesorio">Accesorio</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Presupuesto aproximado</label>
+              <select class="form-control" id="q_budget">
+                <option value="">Sin límite</option>
+                <option value="<200">Menos de $200</option>
+                <option value="200-500">$200 – $500</option>
+                <option value="500-1000">$500 – $1,000</option>
+                <option value="1000-2000">$1,000 – $2,000</option>
+                <option value=">2000">Más de $2,000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Producto o modelo específico</label>
+            <input type="text" class="form-control" id="q_product" placeholder="Ej: iPhone 16 Pro Max 256GB Negro">
+          </div>
+
+          <div class="form-group">
+            <label>¿Para qué lo usarás? (Uso previsto)</label>
+            <select class="form-control" id="q_use" required>
+              <option value="">Selecciona...</option>
+              <option value="personal">Personal / Uso diario</option>
+              <option value="trabajo">Trabajo / Oficina</option>
+              <option value="gaming">Gaming</option>
+              <option value="estudio">Estudio</option>
+              <option value="negocio">Negocio / Empresa</option>
+              <option value="regalo">Regalo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Detalles adicionales o preguntas</label>
+            <textarea class="form-control" id="q_notes" placeholder="Color preferido, capacidad de almacenamiento, urgencia de entrega, etc..." style="min-height:100px"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>¿Cómo prefieres que te contactemos? *</label>
+            <div class="contact-pref-row">
+              <label class="pref-option">
+                <input type="radio" name="contact_pref" value="whatsapp" checked>
+                <span>WhatsApp</span>
+              </label>
+              <label class="pref-option">
+                <input type="radio" name="contact_pref" value="llamada">
+                <span>Llamada</span>
+              </label>
+              <label class="pref-option">
+                <input type="radio" name="contact_pref" value="email">
+                <span>Email</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">
+            Enviar Solicitud de Cotización
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+      <div class="footer-brand">
+        <p>© 2024 Luxwave Express Panamá. Todos los derechos reservados.</p>
+      </div>
+  </div>
+</footer>
+
+    
+<script src="../js/sheets.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>
