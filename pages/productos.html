@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/products.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div style="font-size:1.5rem;animation:waveFloat 4s ease-in-out infinite">🌊</div>
+    <span class="nav-logo-text">Luxwave <span>Express</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">INICIO</a></li>
+    <li><a href="productos.html" class="active">PRODUCTOS</a></li>
+    <li><a href="contacto.html">CONTACTO</a></li>
+    <li><a href="admin.html">ADMIN</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="contacto.html#cotizar" class="btn btn-primary btn-sm">Cotizar →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="products-hero">
+  <div class="section-tag" style="margin:0 auto 16px">Catálogo Completo</div>
+  <h1 class="section-title" style="text-align:center">Nuestros <span class="highlight">Productos</span></h1>
+  <p class="section-subtitle" style="text-align:center;margin:0 auto">Encuentra el equipo perfecto para ti. Filtra por categoría y explora nuestro catálogo actualizado.</p>
+</div>
+
+<!-- FILTERS BAR -->
+<div class="filters-bar">
+  <div class="container filters-inner" id="filtersInner">
+    <button class="filter-btn active" data-cat="all" onclick="filterProducts('all', this)">
+      Todos <span class="count" id="count-all">0</span>
+    </button>
+    <button class="filter-btn" data-cat="celulares" onclick="filterProducts('celulares', this)">
+      Celulares <span class="count" id="count-celulares">0</span>
+    </button>
+    <button class="filter-btn" data-cat="laptops" onclick="filterProducts('laptops', this)">
+      Laptops <span class="count" id="count-laptops">0</span>
+    </button>
+    <button class="filter-btn" data-cat="tablets" onclick="filterProducts('tablets', this)">
+      Tablets <span class="count" id="count-tablets">0</span>
+    </button>
+    <button class="filter-btn" data-cat="monitores" onclick="filterProducts('monitores', this)">
+      Monitores <span class="count" id="count-monitores">0</span>
+    </button>
+    <button class="filter-btn" data-cat="accesorios" onclick="filterProducts('accesorios', this)">
+      Accesorios <span class="count" id="count-accesorios">0</span>
+    </button>
+
+    <div class="filters-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Buscar producto..." id="searchInput" oninput="searchProducts(this.value)">
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<div class="products-section">
+  <div class="container">
+    <div class="products-grid" id="productsGrid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+      <div class="footer-brand">
+        <p>© 2024 Luxwave Express Panamá. Todos los derechos reservados.</p>
+      </div>
+  </div>
+</footer>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal product-modal" style="max-width:700px">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="../js/sheets.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/products.js"></script>
+</body>
+</html>
