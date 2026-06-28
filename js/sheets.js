@@ -10,7 +10,7 @@ const LuxwaveSheets = {
   // pega aquí la URL que termina en /exec. Mientras esté vacío (""), el
   // catálogo funciona en modo "solo lectura desde Sheets" + edición local
   // de respaldo (los cambios del admin no se guardan en el Sheet real).
-  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwChDKnjOed34vpm11R6eB-xaVF5JUCX1kty-v1yjckUf150sW8TBnjcJ6UGEuWrYapgQ/exec",
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzbnD0TUqKsu2jDux4QRGFsxK7UhxquX58Wy-bWgr3INDB3rfb-DOVuq1UJc2pW5CUgWg/exec",
 
   CACHE_KEY: "lux_products_cache",
   //emoji: this.emojiForCategory(category),
