@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+  <div class="admin-login-page">
+    <div class="admin-login-card">
+      <div style="font-size:3rem;margin-bottom:16px">🌊</div>
+      <h2>Panel de Administración</h2>
+      <p>Luxwave Express — Acceso restringido</p>
+
+      <div id="loginError" style="display:none;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:12px;font-size:0.875rem;color:#ef4444;margin-bottom:20px">
+        Usuario o contraseña incorrectos
+      </div>
+
+      <div class="form-group" style="text-align:left">
+        <label>Usuario</label>
+        <input type="text" class="form-control" id="loginUser" placeholder="admin" autocomplete="username">
+      </div>
+      <div class="form-group" style="text-align:left">
+        <label>Contraseña</label>
+        <div style="position:relative">
+          <input type="password" class="form-control" id="loginPass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+          <button onclick="togglePass()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--gray);cursor:pointer;font-size:1rem">👁</button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;margin-bottom:12px" onclick="doLogin()">
+         Ingresar al Panel
+      </button>
+
+      <p style="font-size:0.75rem;color:var(--gray)">
+        <a href="../index.html" style="color:var(--blue-light);text-decoration:none">← Volver al sitio</a>
+      </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardPage" style="display:none">
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span style="font-size:1.5rem"></span>
+        <span>Luxwave Admin</span>
+      </div>
+
+      <div class="sidebar-section-label">Principal</div>
+      <ul class="sidebar-nav">
+        <li><a class="active" onclick="showSection('overview')" data-section="overview">
+          <span class="icon"></span>Resumen
+        </a></li>
+        <li><a onclick="showSection('products')" data-section="products">
+          <span class="icon"></span>Productos
+        </a></li>
+        <li><a onclick="showSection('add-product')" data-section="add-product">
+          <span class="icon"></span>Añadir Producto
+        </a></li>
+      </ul>
+
+      <div class="sidebar-section-label">Ajustes</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html" target="_blank">
+          <span class="icon"></span>Volver al sitio
+        </a></li>
+      </ul>
+
+      <div class="sidebar-bottom">
+        <ul class="sidebar-nav">
+          <li><a onclick="doLogout()" style="color:var(--danger)">
+            <span class="icon"></span>Cerrar Sesión
+          </a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- OVERVIEW -->
+      <div class="admin-section active" id="section-overview">
+        <div class="admin-header">
+          <div>
+            <h1>Panel Administrativo</h1>
+            <p>Bienvenido al panel de administración de Luxwave Express</p>
+          </div>
+          <div style="font-size:0.85rem;color:var(--gray)" id="adminDate"></div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+          <!-- Filled by JS -->
+        </div>
+
+        <div style="margin-top:24px">
+          <!-- Product summary -->
+          <div class="admin-table-wrap">
+            <div class="table-header">
+              <h3>Inventario Rápido</h3>
+              <button class="btn btn-ghost btn-sm" onclick="showSection('products')">Ver todos →</button>
+            </div>
+            <div id="inventorySummary">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS LIST -->
+      <div class="admin-section" id="section-products">
+        <div class="admin-header">
+          <div>
+            <h1>Productos</h1>
+            <p id="productsCount">Catálogo actual</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showSection('add-product')">Añadir</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <div class="table-header">
+            <h3>Catálogo completo</h3>
+          </div>
+          <div id="productsList"><!-- Filled by JS --></div>
+        </div>
+      </div>
+
+      <!-- ADD / EDIT PRODUCT -->
+      <div class="admin-section" id="section-add-product">
+        <div class="admin-header">
+          <div>
+            <h1 id="productFormTitle">Añadir Producto</h1>
+            <p>Completa la información del producto</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="resetProductForm()">↺ Limpiar</button>
+        </div>
+
+        <div class="admin-table-wrap" style="padding:32px">
+          <form id="productForm" onsubmit="saveProduct(event)">
+            <input type="hidden" id="editProductId">
+            <div class="product-form-grid">
+              <div class="form-group">
+                <label>Nombre del producto</label>
+                <input type="text" class="form-control" id="p_name" required placeholder="Ej: iPhone 16 Pro Max">
+              </div>
+              <div class="form-group">
+                <label>Categoría</label>
+                <select class="form-control" id="p_category" required onchange="updateCategoryPreview()">
+                  <option value="">Selecciona...</option>
+                  <option value="celulares">Celulares</option>
+                  <option value="laptops">Laptops</option>
+                  <option value="tablets">Tablets</option>
+                  <option value="monitores">Monitores</option>
+                  <option value="accesorios">Accesorios</option>
+                </select>
+                <small id="categoryPreview" style="display:block;margin-top:6px;color:var(--gray);font-size:0.78rem">El ícono del producto se asigna automáticamente según la categoría</small>
+              </div>
+              <div class="form-group full-width">
+                <label>Imagen del producto (opcional)</label>
+                <input type="url" class="form-control" id="p_image" placeholder="Pega el link de la imagen (Google Drive, Imgur, etc.)" oninput="previewProductImage()">
+                <small style="display:block;margin-top:6px;color:var(--gray);font-size:0.78rem">
+                  Si usas Google Drive: clic derecho en la imagen → Compartir → "Cualquier persona con el enlace" → copia el link y pégalo aquí. Si lo dejas vacío, se muestra el ícono según la categoría.
+                </small>
+                <div id="imagePreviewWrap" style="display:none;margin-top:10px">
+                  <img id="imagePreview" src="" alt="Vista previa" style="max-width:160px;max-height:160px;border-radius:10px;border:1px solid rgba(255,255,255,0.1)">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Precio (USD)</label>
+                <input type="number" class="form-control" id="p_price" required placeholder="999" min="0">
+              </div>
+              <div class="form-group">
+                <label>Precio original (tachado)</label>
+                <input type="number" class="form-control" id="p_original_price" placeholder="1199 (opcional)" min="0">
+              </div>
+              <div class="form-group">
+                <label>Estado *</label>
+                <select class="form-control" id="p_status" required>
+                  <option value="disponible">Disponible</option>
+                  <option value="bajo-stock">Bajo Stock</option>
+                  <option value="agotado">Agotado</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Condición</label>
+                <select class="form-control" id="p_condition">
+                  <option value="Nuevo">Nuevo</option>
+                  <option value="Reacondicionado">Reacondicionado</option>
+                  <option value="Usado">Usado</option>
+                  <option value="Usado">Poco uso</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Unidades en stock</label>
+                <input type="number" class="form-control" id="p_stock" placeholder="10" min="0" value="1">
+              </div>
+              <div class="form-group">
+                <label>Opciones</label>
+                <div style="display:flex;gap:16px;margin-top:10px">
+                  <label style="display:flex;align-items:center;gap:8px;font-size:0.875rem;text-transform:none;letter-spacing:0">
+                    <input type="checkbox" id="p_featured" style="accent-color:var(--blue)"> Destacado
+                  </label>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:0.875rem;text-transform:none;letter-spacing:0">
+                    <input type="checkbox" id="p_new" style="accent-color:var(--blue)"> Nuevo
+                  </label>
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label>Descripción corta</label>
+                <input type="text" class="form-control" id="p_short_desc" required placeholder="Una línea descriptiva del producto" maxlength="80">
+              </div>
+              <div class="form-group full-width">
+                <label>Descripción completa</label>
+                <textarea class="form-control" id="p_description" placeholder="Descripción detallada del producto..." style="min-height:120px"></textarea>
+              </div>
+              <div class="form-group full-width">
+                <label>Especificaciones (una por línea)</label>
+                <textarea class="form-control" id="p_specs" placeholder="Pantalla 6.7 AMOLED 120Hz&#10;Procesador Snapdragon 8 Gen 3&#10;RAM 12GB / 256GB" style="min-height:120px"></textarea>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:8px">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Guardar Producto
+              </button>
+              <button type="button" class="btn btn-ghost" onclick="resetProductForm()">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="../js/sheets.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
