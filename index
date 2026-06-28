@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxwave Express Panamá</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-wave">🌊</div>
+    <span class="nav-logo-text">Luxwave <span>Express</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">INICIO</a></li>
+    <li><a href="pages/productos.html">PRODUCTOS</a></li>
+    <li><a href="pages/contacto.html">CONTACTO</a></li>
+    <li><a href="pages/admin.html">ADMIN</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="pages/productos.html" class="btn btn-primary btn-sm">Ver Catálogo →</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-waves">
+      <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path fill="rgba(45,106,191,0.08)" d="M0,80 C360,160 720,0 1080,80 C1260,120 1380,40 1440,60 L1440,200 L0,200 Z"/>
+        <path fill="rgba(45,106,191,0.05)" d="M0,120 C240,60 480,160 720,100 C960,40 1200,140 1440,80 L1440,200 L0,200 Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-badge animate-fadeInUp">
+      <span></span> Bienvenido a Luxwave Express Panamá
+    </div>
+
+    <h1 class="hero-title animate-fadeInUp animate-delay-1">
+      Tecnología de
+      <span class="title-wave">última generación</span>
+      <br>al alcance de tu mano
+    </h1>
+
+    <p class="hero-subtitle animate-fadeInUp animate-delay-2">
+      Distribuimos los mejores equipos electrónicos del mercado.
+      Celulares, laptops, tablets, monitores y más — con garantía,
+      calidad garantizada y atención personalizada en Panamá.
+    </p>
+
+    <div class="hero-actions animate-fadeInUp animate-delay-3">
+      <a href="pages/productos.html" class="btn btn-primary btn-lg">
+        Explorar Catálogo <span>→</span>
+      </a>
+      <a href="pages/contacto.html" class="btn btn-outline btn-lg">
+        Cotizar Ahora
+      </a>
+    </div>
+
+    <div class="hero-stats animate-fadeInUp animate-delay-4">
+      <div class="hero-stat">
+        <span class="stat-num">15+</span>
+        <span class="stat-lbl">Productos</span>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat">
+        <span class="stat-num">20+</span>
+        <span class="stat-lbl">Clientes</span>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl">Garantía</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Descubrir</span>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="features-strip">
+  <div class="container">
+    <div class="features-row">
+      <div class="feature-item">
+        <span class="feature-icon">🛡️</span>
+        <div>
+          <h4>Garantía Incluida</h4>
+          <p>Todos nuestros equipos con garantía oficial.</p>
+        </div>
+      </div>
+      <div class="feature-div"></div>
+      <div class="feature-item">
+        <span class="feature-icon">⚡</span>
+        <div>
+          <h4>Entrega Rápida</h4>
+          <p>Envío a todo Panamá Oeste.</p>
+        </div>
+      </div>
+      <div class="feature-div"></div>
+      <div class="feature-item">
+        <span class="feature-icon">💬</span>
+        <div>
+          <h4>Soporte Directo</h4>
+          <p>Atención por WhatsApp 7 días a la semana.</p>
+        </div>
+      </div>
+      <div class="feature-div"></div>
+      <div class="feature-item">
+        <span class="feature-icon">💳</span>
+        <div>
+          <h4>Múltiples Pagos</h4>
+          <p>Yappy, transferencia y efectivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS CAROUSEL -->
+<section class="section featured-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-tag">DESTACADOS</div>
+        <h2 class="section-title">Productos <span class="highlight">Destacados</span></h2>
+        <p class="section-subtitle">Nuestros mejores equipos para ti.</p>
+      </div>
+      <a href="pages/productos.html" class="btn btn-ghost">Ver todos →</a>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" id="carouselPrev">‹</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+      <button class="carousel-btn next" id="carouselNext">›</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section categories-section">
+  <div class="container">
+    <div class="section-tag">CATEGORIAS</div>
+    <h2 class="section-title hidden">Explora por <span class="highlight">Categoría</span></h2>
+    <div class="categories-grid hidden animate-delay-1">
+      <a href="pages/productos.html?cat=celulares" class="cat-card">
+        <div class="cat-emoji">📱</div>
+        <h3>Celulares</h3>
+        <p>iPhone, Samsung, Pixel y más</p>
+        <span class="cat-arrow">→</span>
+      </a>
+      <a href="pages/productos.html?cat=laptops" class="cat-card">
+        <div class="cat-emoji">💻</div>
+        <h3>Laptops</h3>
+        <p>MacBook, Gaming, Ultrabooks</p>
+        <span class="cat-arrow">→</span>
+      </a>
+      <a href="pages/productos.html?cat=tablets" class="cat-card">
+        <div class="cat-emoji">📲</div>
+        <h3>Tablets</h3>
+        <p>iPad, Galaxy Tab, Surface</p>
+        <span class="cat-arrow">→</span>
+      </a>
+      <a href="pages/productos.html?cat=monitores" class="cat-card">
+        <div class="cat-emoji">🖥️</div>
+        <h3>Monitores</h3>
+        <p>Gaming, Profesional, UltraWide</p>
+        <span class="cat-arrow">→</span>
+      </a>
+      <a href="pages/productos.html?cat=accesorios" class="cat-card">
+        <div class="cat-emoji">🎧</div>
+        <h3>Accesorios</h3>
+        <p>Audífonos, cargadores, cables</p>
+        <span class="cat-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card hidden">
+      <div class="cta-content">
+        <div class="cta-tag">WhatsApp Directo</div>
+        <h2 class="cta-title">¿No encuentras lo que buscas?</h2>
+        <p>En LuxWave Express, creemos que una buena experiencia no empieza cuando compras, sino desde el primer contacto. 
+          Por eso, nuestro equipo de atención al cliente está siempre disponible para ayudarte a resolver dudas, orientarte 
+          en tu elección y acompañarte en todo el proceso de compra.</p>
+        <div class="cta-actions">
+          <button class="btn btn-sand btn-lg" onclick="openWhatsApp('50769775333', '¡Hola! Vi su página y quisiera cotizar un producto. ¿Me pueden ayudar?')">
+            Chatear en WhatsApp
+          </button>
+          <a href="pages/productos.html" class="btn btn-outline btn-lg">Ver Catálogo</a>
+        </div>
+      </div>
+      <div class="cta-visual">
+        <div class="cta-wave">🌊</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+      <div class="footer-brand">
+        <p>© 2024 Luxwave Express Panamá. Todos los derechos reservados.</p>
+      </div>
+  </div>
+</footer>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal product-modal" style="max-width:700px">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="js/sheets.js"></script>
+<script src="js/data.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
