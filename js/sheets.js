@@ -3,17 +3,16 @@
 const LuxwaveSheets = {
 
   // 👉 Reemplaza esta URL si alguna vez vuelves a publicar el Sheet
-  CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRy4OKrnjX9uvx_iNOgFkxPfTISfTNlPYL0TcuvXbU4u0_g5oFV-OlyhjAhCNsS_ht0nb8IEuIb8q2M/pubhtml",
+  CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRy4OKrnjX9uvx_iNOgFkxPfTISfTNlPYL0TcuvXbU4u0_g5oFV-OlyhjAhCNsS_ht0nb8IEuIb8q2M/pub?output=csv",
 
   // 👉 URL del Apps Script Web App que escribe en el Sheet (agregar/editar/borrar).
   // Sigue las instrucciones del archivo LuxWaveBackend.gs para crearlo, y
   // pega aquí la URL que termina en /exec. Mientras esté vacío (""), el
   // catálogo funciona en modo "solo lectura desde Sheets" + edición local
   // de respaldo (los cambios del admin no se guardan en el Sheet real).
-  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzbnD0TUqKsu2jDux4QRGFsxK7UhxquX58Wy-bWgr3INDB3rfb-DOVuq1UJc2pW5CUgWg/exec",
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwChDKnjOed34vpm11R6eB-xaVF5JUCX1kty-v1yjckUf150sW8TBnjcJ6UGEuWrYapgQ/exec",
 
   CACHE_KEY: "lux_products_cache",
-  //emoji: this.emojiForCategory(category),
 
   // Mapea categoría -> emoji, así el admin ya no elige emoji a mano
   CATEGORY_EMOJI: {
@@ -94,7 +93,7 @@ const LuxwaveSheets = {
       iPrice = idx("price"), iOriginalPrice = idx("originalPrice"), iStatus = idx("status"),
       iCondition = idx("condition"), iStock = idx("stock"), iShortDesc = idx("shortDesc"),
       iDescription = idx("description"), iSpecs = idx("specs"),
-      iFeatured = idx("featured"), iNew = idx("new"),iImage = idx("image");
+      iFeatured = idx("featured"), iNew = idx("new"), iImage = idx("image");
 
     const toBool = (v) => /^true$/i.test((v || "").trim());
 
